@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Inteligência Artificial | O Futuro da Tecnologia</title>
+    <!-- Google Fonts para tipografia moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (gratuito) para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #f6f9fc 0%, #eef2f5 100%);
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.7rem;
+            background: linear-gradient(135deg, #0b2b40, #1e6f5c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            background: none;
+            color: #1e6f5c;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c4b5e;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1e6f5c;
+        }
+
+        .btn-outline {
+            border: 1.5px solid #1e6f5c;
+            padding: 8px 20px;
+            border-radius: 40px;
+            background: transparent;
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background: #1e6f5c10;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-badge {
+            background: #e0f0ed;
+            color: #0f5c4a;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, #0f2b36, #15806b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #2c5a6e;
+            margin-bottom: 32px;
+            max-width: 550px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #1e6f5c;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .btn-primary:hover {
+            background: #0f5a4a;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #1e6f5c;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #1e6f5c;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: #e9f4f1;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            width: 380px;
+            border-radius: 32px;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+        }
+
+        /* Seção conceito cards */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 60px 0 16px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #4f6f7f;
+            margin-bottom: 48px;
+            font-size: 1.1rem;
+        }
+
+        .cards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin: 30px 0 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 30px 24px;
+            width: 280px;
+            transition: all 0.25s ease;
+            box-shadow: 0 12px 25px -12px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 22px 30px -12px rgba(30, 111, 92, 0.2);
+            border-color: #cbe8e2;
+        }
+
+        .card-icon {
+            font-size: 2.8rem;
+            color: #1e6f5c;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #3d5e6e;
+            font-size: 0.95rem;
+        }
+
+        /* Área interativa: Simulador de IA (Respostas inteligentes) */
+        .ia-interativa {
+            background: linear-gradient(120deg, #eef7f4, #ffffff);
+            border-radius: 48px;
+            padding: 48px 32px;
+            margin: 60px 0;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.05);
+            border: 1px solid #cae3dd;
+        }
+
+        .flex-ia {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .ia-text {
+            flex: 1;
+        }
+
+        .ia-text h2 {
+            font-size: 1.9rem;
+            margin-bottom: 15px;
+        }
+
+        .ia-text p {
+            margin-bottom: 25px;
+            color: #2c5a4b;
+        }
+
+        .chat-simulator {
+            flex: 1;
+            background: white;
+            border-radius: 36px;
+            padding: 24px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .chat-window {
+            background: #f8fafc;
+            border-radius: 24px;
+            padding: 20px;
+            height: 220px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border: 1px solid #e2edf0;
+        }
+
+        .message {
+            padding: 10px 14px;
+            border-radius: 22px;
+            max-width: 85%;
+            font-size: 0.9rem;
+            animation: fadeSlide 0.2s ease;
+        }
+
+        .user-msg {
+            background: #1e6f5c;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 6px;
+        }
+
+        .ai-msg {
+            background: #e6edf0;
+            color: #1a2c3e;
+            align-self: flex-start;
+            border-bottom-left-radius: 6px;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 12px;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 14px 18px;
+            border-radius: 60px;
+            border: 1px solid #cbdbe2;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .input-area input:focus {
+            border-color: #1e6f5c;
+            box-shadow: 0 0 0 3px rgba(30,111,92,0.2);
+        }
+
+        .input-area button {
+            background: #1e6f5c;
+            border: none;
+            width: 48px;
+            border-radius: 60px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .input-area button:hover {
+            background: #0f5a4a;
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Aplicações em destaque */
+        .apps-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            justify-content: center;
+            margin: 50px 0 30px;
+        }
+
+        .app-item {
+            background: white;
+            border-radius: 32px;
+            padding: 20px 28px;
+            width: 260px;
+            text-align: center;
+            transition: 0.2s;
+            border: 1px solid #dcf0eb;
+        }
+
+        .app-item i {
+            font-size: 2.5rem;
+            color: #1e6f5c;
+            margin-bottom: 15px;
+        }
+
+        .app-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        /* Timeline ou curiosidades */
+        .faq-area {
+            background: #fff;
+            border-radius: 40px;
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+        }
+
+        .faq-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        .faq-card {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .faq-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #102b25;
+            color: #cfdfda;
+            padding: 40px 0 24px;
+            border-radius: 32px 32px 0 0;
+            margin-top: 50px;
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .footer-copy {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            border-top: 1px solid #2a5448;
+            padding-top: 24px;
+        }
+
+        @media (max-width: 800px) {
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .nav-flex {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">
+            <i class="fas fa-brain"></i>
+            <span>NeuralMind</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Início</a>
+            <a href="#">Conceitos</a>
+            <a href="#">IA Demo</a>
+            <a href="#" class="btn-outline">Blog</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <span class="hero-badge"><i class="fas fa-microchip"></i> Revolução 4.0</span>
+            <h1>Inteligência Artificial<br>Transformando o mundo</h1>
+            <p>Machine Learning, Redes Neurais e Processamento de Linguagem Natural estão redefinindo indústrias, criando soluções inteligentes e impulsionando o futuro da humanidade.</p>
+            <div class="btn-group">
+                <button class="btn-primary" id="exploreBtn"><i class="fas fa-robot"></i> Explorar Agora</button>
+                <button class="btn-secondary" id="demoIaBtn"><i class="fas fa-comment-dots"></i> Testar Chat IA</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://placehold.co/500x450/eef2f5/1e6f5c?text=IA+Visualização" alt="Ilustração IA">
+        </div>
+    </div>
+
+    <!-- Cards conceituais -->
+    <div class="section-title">Fundamentos da IA</div>
+    <div class="section-sub">Conceitos que impulsionam sistemas inteligentes</div>
+    <div class="cards-grid">
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Machine Learning</h3>
+            <p>Algoritmos que aprendem com dados, identificam padrões e fazem previsões sem programação explícita.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+            <h3>Deep Learning</h3>
+            <p>Redes neurais profundas inspiradas no cérebro humano, essenciais para visão computacional e NLP.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-language"></i></div>
+            <h3>Processamento de Linguagem</h3>
+            <p>Permite que máquinas entendam, interpretem e respondam à linguagem humana com naturalidade.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-eye"></i></div>
+            <h3>Visão Computacional</h3>
+            <p>Capacidade das máquinas de extrair informações de imagens e vídeos, como reconhecimento facial.</p>
+        </div>
+    </div>
+
+    <!-- Área Interativa - Simulador de IA (Chat inteligente simulado) -->
+    <div class="ia-interativa" id="demoChat">
+        <div class="flex-ia">
+            <div class="ia-text">
+                <h2><i class="fas fa-comment-dots"></i> Converse com a IA experimental</h2>
+                <p>Teste uma inteligência artificial básica que responde a perguntas sobre tecnologia, IA e curiosidades. Baseada em regras educacionais, simula um assistente virtual amigável.</p>
+                <p><strong>💡 Dica:</strong> Pergunte sobre "o que é IA", "machine learning", "redes neurais" ou simplesmente diga "olá".</p>
+            </div>
+            <div class="chat-simulator">
+                <div class="chat-window" id="chatWindow">
+                    <div class="message ai-msg">🤖 Olá! Eu sou a assistente NeuralMind. Pergunte qualquer coisa sobre Inteligência Artificial ou tecnologia!</div>
+                </div>
+                <div class="input-area">
+                    <input type="text" id="chatInput" placeholder="Digite sua mensagem...">
+                    <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aplicações Práticas da IA -->
+    <div class="section-title">IA no Cotidiano</div>
+    <div class="section-sub">Soluções reais que já fazem parte da sua vida</div>
+    <div class="apps-showcase">
+        <div class="app-item"><i class="fas fa-car"></i><h4>Carros Autônomos</h4><p>Sensores + IA para navegação segura.</p></div>
+        <div class="app-item"><i class="fas fa-stethoscope"></i><h4>Diagnóstico Médico</h4><p>Identificação precoce de doenças por imagem.</p></div>
+        <div class="app-item"><i class="fas fa-music"></i><h4>Recomendação</h4><p>Spotify, Netflix e algoritmos personalizados.</p></div>
+        <div class="app-item"><i class="fas fa-headset"></i><h4>Assistentes Virtuais</h4><p>Siri, Alexa, Google Assistant.</p></div>
+    </div>
+
+    <!-- Curiosidades / FAQ sobre IA -->
+    <div class="faq-area">
+        <h2 style="margin-bottom: 28px; text-align: center;"><i class="fas fa-question-circle"></i> Perguntas Frequentes sobre IA</h2>
+        <div class="faq-grid">
+            <div class="faq-card">
+                <h4><i class="fas fa-cogs"></i> IA é igual a robôs?</h4>
+                <p>Não. IA é a inteligência computacional. Robôs são corpos físicos que podem ou não conter IA. Muitos sistemas de IA são puramente software.</p>
+            </div>
+            <div class="faq-card">
+                <h4><i class="fas fa-chart-simple"></i> IA pode superar humanos?</h4>
+                <p>Em tarefas específicas (xadrez, diagnóstico), sim. Mas IA geral com inteligência comparável aos humanos ainda é um desafio científico.</p>
+            </div>
+            <div class="faq-card">
+                <h4><i class="fas fa-shield-haltered"></i> IA é ética?</h4>
+                <p>Questões de viés, privacidade e transparência são críticas. O desenvolvimento de IA responsável é prioridade global.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-flex">
+            <div>
+                <div class="footer-logo"><i class="fas fa-brain"></i> NeuralMind</div>
+                <p style="margin-top: 10px;">Explorando o potencial ilimitado<br>da Inteligência Artificial.</p>
+            </div>
+            <div>
+                <h4>Recursos</h4>
+                <p>Artigos</p>
+                <p>Papers Científicos</p>
+                <p>Comunidade</p>
+            </div>
+            <div>
+                <h4>Contato</h4>
+                <p>hello@neuralmind.ai</p>
+                <p><i class="fab fa-twitter"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-github"></i></p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2025 NeuralMind — Inspirado pelo futuro da inteligência artificial. Código aberto para fins educacionais.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Simulação de IA: respostas baseadas em palavras-chave (educacional e divertido)
+    const getAIResponse = (userMessage) => {
+        let msg = userMessage.toLowerCase().trim();
+        
+        // Pequeno léxico de respostas inteligentes
+        if (msg.includes("olá") || msg.includes("oi") || msg.includes("hey") || msg === "ola") {
+            return "Olá! Como posso ajudar você a entender mais sobre Inteligência Artificial hoje?";
+        }
+        if (msg.includes("o que é ia") || msg.includes("definição de ia") || msg.includes("inteligência artificial")) {
+            return "IA é um campo da ciência da computação que cria sistemas capazes de realizar tarefas que exigiriam inteligência humana, como aprendizado, raciocínio e percepção.";
+        }
+        if (msg.includes("machine learning") || msg.includes("aprendizado de máquina")) {
+            return "Machine Learning é um subcampo da IA onde algoritmos aprendem padrões a partir de dados. Quanto mais dados, melhores as previsões! É usado em recomendações, diagnósticos e muito mais.";
+        }
+        if (msg.includes("deep learning") || msg.includes("redes neurais") || msg.includes("neurais")) {
+            return "Deep Learning utiliza redes neurais com várias camadas. Inspiradas no cérebro, são excelentes em reconhecimento de imagem, áudio e processamento de linguagem natural.";
+        }
+        if (msg.includes("chatgpt") || msg.includes("gpt")) {
+            return "ChatGPT é um modelo de linguagem baseado na arquitetura GPT (Generative Pre-trained Transformer). Ele gera texto coerente e criativo, sendo um exemplo de NLP avançado.";
+        }
+        if (msg.includes("futuro") || msg.includes("2025")) {
+            return "O futuro da IA inclui maior integração com IoT, veículos autônomos, medicina personalizada e debates sobre IA ética e regulamentação. É empolgante!";
+        }
+        if (msg.includes("carros") || msg.includes("autônomo")) {
+            return "Carros autônomos usam sensores, câmeras e redes neurais profundas para navegar. Empresas como Tesla e Waymo lideram essa revolução.";
+        }
+        if (msg.includes("obrigado") || msg.includes("valeu") || msg.includes("gratidão")) {
+            return "Por nada! É um prazer compartilhar conhecimento sobre IA. Continue curioso(a)!";
+        }
+        if (msg.includes("como funciona")) {
+            return "Os sistemas de IA geralmente usam grandes volumes de dados, algoritmos de otimização e poder computacional. O treinamento ajusta parâmetros para minimizar erros nas tarefas.";
+        }
+        
+        // resposta padrão criativa
+        return "Interessante! 🤖 Ainda estou aprendendo, mas posso te dizer que a IA está evoluindo rápido. Que tal perguntar sobre 'machine learning', 'redes neurais' ou 'futuro da IA'?";
+    };
+    
+    // elementos DOM chat
+    const chatWindow = document.getElementById('chatWindow');
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendChatBtn');
+    
+    // Função para adicionar mensagens na janela
+    function addMessage(text, isUser) {
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add('message');
+        if (isUser) {
+            msgDiv.classList.add('user-msg');
+            msgDiv.innerHTML = `<i class="fas fa-user"></i> ${escapeHtml(text)}`;
+        } else {
+            msgDiv.classList.add('ai-msg');
+            msgDiv.innerHTML = `<i class="fas fa-robot"></i> ${escapeHtml(text)}`;
+        }
+        chatWindow.appendChild(msgDiv);
+        // Scroll automático
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+    
+    // simples escape para evitar XSS
+    function escapeHtml(str) {
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+            return c;
+        });
+    }
+    
+    function handleUserMessage() {
+        let userMsg = chatInput.value.trim();
+        if (userMsg === "") return;
+        
+        addMessage(userMsg, true);
+        chatInput.value = "";
+        
+        // Simula pequeno "delay" para parecer processamento
+        setTimeout(() => {
+            const aiReply = getAIResponse(userMsg);
+            addMessage(aiReply, false);
+        }, 400);
+    }
+    
+    sendBtn.addEventListener('click', handleUserMessage);
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleUserMessage();
+        }
+    });
+    
+    // Rolagem de botões para seções específicas
+    const exploreBtn = document.getElementById('exploreBtn');
+    const demoIaBtn = document.getElementById('demoIaBtn');
+    
+    exploreBtn.addEventListener('click', () => {
+        const cardsSection = document.querySelector('.cards-grid');
+        if (cardsSection) {
+            cardsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+    
+    demoIaBtn.addEventListener('click', () => {
+        const demoSection = document.getElementById('demoChat');
+        if (demoSection) {
+            demoSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Pequeno foco no input
+            setTimeout(() => {
+                chatInput.focus();
+            }, 500);
+        }
+    });
+    
+    // Carregar uma imagem alternativa mais elegante (substituir placeholder por um SVG simples via JS? opcional)
+    // Mas manter o placeholder é ok. Vamos apenas garantir que o chat funcione perfeitamente.
+    console.log("Site IA interativo carregado.");
+</script>
+</body>
+</html>
